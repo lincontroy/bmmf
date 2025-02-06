@@ -83,6 +83,8 @@
          <div class="invalid-feedback">Passwords must match.</div>
       </div>
    </div>
+
+   <p style="color:black">Already have an account? <a href="{{url('customer/login')}}"> Login</a> </p>
    <div class="d-flex justify-content-center mt-4">
       <button class="btn btn-primary" type="submit">Register</button>
    </div>
