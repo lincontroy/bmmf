@@ -1,0 +1,87 @@
+<?php
+
+namespace App\DataTables;
+
+use App\Models\FeeSetting;
+use Illuminate\Database\Eloquent\Builder as QueryBuilder;
+use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Html\Builder as HtmlBuilder;
+use Yajra\DataTables\Html\Button;
+use Yajra\DataTables\Html\Column;
+use Yajra\DataTables\Services\DataTable;
+
+class FeeSettingsDataTable extends DataTable
+{
+    public function dataTable(QueryBuilder $query): EloquentDataTable
+    {
+        return (new EloquentDataTable($query))
+            ->addColumn('action', function ($data) {
+                $button = '<div class="d-flex align-items-center">';
+
+                $button .= '<a href="javascript:void(0);" class="btn btn-info-soft btn-sm m-1 edit-fee-setting-button" title="'.localize("Edit").'" data-action="' . route('admin.setting.fee-setting.update', ['fee_setting' => $data->id]) . '" data-route="' . route('admin.setting.fee-setting.edit', ['fee_setting' => $data->id]) . '"><i class="fa fa-edit"></i></a>';
+
+                $button .= '<a href="javascript:void(0);" class="btn btn-danger-soft btn-sm m-1 delete-button" title="'.localize("Delete").'" data-action="' . route('admin.setting.fee-setting.destroy', ['fee_setting' => $data->id]) . '"><i class="fa fa-trash"></i></a>';
+
+                $button .= '</div>';
+
+                return $button;
+            })
+            ->editColumn('fee', function($data){
+                return $data->fee.' %';
+            })
+            ->setRowId('id')
+            ->addIndexColumn()
+            ->rawColumns(['action']);
+
+    }
+
+    public function query(FeeSetting $model): QueryBuilder
+    {
+        return $model->newQuery();
+    }
+
+    public function html(): HtmlBuilder
+    {
+        return $this->builder()
+            ->setTableId('fee-settings-table')
+            ->columns($this->getColumns())
+            ->minifiedAjax()
+            ->orderBy(0)
+            ->dom("<'row m-3'<'col-md-3'l><'col-md-5 d-flex align-items-center'B><'col-md-4'f>>rt<'bottom'<'row'<'col-md-6'i><'col-md-6'p>>><'clear'>")
+            ->parameters([
+                'responsive'     => true,
+                'autoWidth'      => false,
+                'headerCallback' => 'function(thead, data, start, end, display) {
+                    $(thead).addClass("bg-primary");
+                    $(thead).find("th").addClass("text-white");
+                }',
+            ])
+            ->buttons([
+                Button::make('excel')->text('<i class="fa fa-file-excel"></i> Excel')->className('btn btn-success data-table-btn btn-sm-menu'),
+                Button::make('csv')->text('<i class="fa fa-file-csv"></i> CSV')->className('btn btn-success data-table-btn btn-sm-menu'),
+                Button::make('pdf')->text('<i class="fa fa-file-pdf"></i> PDF')->className('btn btn-success data-table-btn btn-sm-menu'),
+                Button::make('print')->text('<i class="fa fa-print"></i> Print')->className('btn btn-success data-table-btn btn-sm-menu')->attr(['target' => '_blank']),
+                Button::make('reset')->text('<i class="fa fa-undo-alt"></i> Reset')->className('btn btn-success data-table-btn btn-sm-menu'),
+            ]);
+    }
+
+    public function getColumns(): array
+    {
+        return [
+            Column::make('DT_RowIndex')->title(localize('SL'))->searchable(false)->orderable(false)->width(30)->addClass('text-center'),
+            Column::make('level')->title(localize('Level')),
+            Column::make('fee')->title(localize('Fee')),
+            Column::computed('action')->title(localize('Action'))
+                ->exportable(false)
+                ->printable(false)
+                ->width(100)
+                ->addClass('text-center'),
+        ];
+    }
+
+    protected function filename(): string
+    {
+        return 'FeeSettings_' . date('YmdHis');
+    }
+
+}

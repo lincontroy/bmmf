@@ -1,0 +1,11 @@
+{
+    "name": "Stake",
+    "alias": "stake",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Stake\\App\\Providers\\StakeServiceProvider"
+    ],
+    "files": []
+}

@@ -1,0 +1,11 @@
+{
+    "name": "QuickExchange",
+    "alias": "quickexchange",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\QuickExchange\\App\\Providers\\QuickExchangeServiceProvider"
+    ],
+    "files": []
+}

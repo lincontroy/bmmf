@@ -1,0 +1,14 @@
+{
+    "Package": true,
+    "Stake": true,
+    "Finance": true,
+    "Merchant": true,
+    "QuickExchange": true,
+    "B2xloan": true,
+    "Reports": true,
+    "Customer": true,
+    "Support": true,
+    "CMS": true,
+    "Migration": true,
+    "AddColumnToStakePlans": true
+}

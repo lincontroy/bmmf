@@ -1,0 +1,31 @@
+{
+    "name": "nwidart/b2xloan",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\B2xloan\\": "",
+            "Modules\\B2xloan\\App\\": "app/",
+            "Modules\\B2xloan\\Database\\Factories\\": "database/factories/",
+            "Modules\\B2xloan\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\B2xloan\\Tests\\": "tests/"
+        }
+    }
+}

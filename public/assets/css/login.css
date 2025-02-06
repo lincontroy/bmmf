@@ -1,0 +1,23 @@
+.login-bg {
+    background-color: #f5fbff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.password-toggle-icon {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.table-search-icon {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border-radius: 10px !important;
+    padding: 11px 15px;
+}
+/* #login-bg {
+    background-image: url('../img/login-bg.png');
+} */

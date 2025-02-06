@@ -1,0 +1,88 @@
+<?php
+
+namespace App\Enums;
+
+use App\Traits\EnumToArray;
+
+enum ArticleLangDataTypeEnum: string {
+
+    case HOME_SLIDER_TITLE                  = 'home_slider_title';
+    case HOME_SLIDER_HEADER                 = 'home_slider_header';
+    case HOME_SLIDER_PARA                   = 'home_slider_para';
+    case HOME_SLIDER_BUTTON_TEXT            = 'home_slider_button_text';
+    case ABOUT_TITLE                        = 'about_title';
+    case ABOUT_HEADER                       = 'about_header';
+    case ABOUT_CONTENT                      = 'about_content';
+    case ABOUT_BUTTON_TEXT                  = 'about_button_text';
+    case ABOUT_US_BANNER_TITLE              = 'about_us_banner_title';
+    case PACKAGE_BANNER_TITLE               = 'package_banner_title';
+    case PACKAGE_HEADER_TITLE               = 'package_header_title';
+    case PACKAGE_HEADER_CONTENT             = 'package_header_content';
+    case JOIN_US_TODAY_TITLE                = 'join_us_today_title';
+    case JOIN_US_TODAY_CONTENT              = 'join_us_today_content';
+    case MERCHANT_TITLE_HEADER              = 'merchant_title_header';
+    case MERCHANT_TITLE_CONTENT             = 'merchant_title_content';
+    case MERCHANT_TOP_BANNER_TITLE          = 'merchant_top_banner_title';
+    case MERCHANT_CONTENT_HEADER            = 'merchant_content_header';
+    case MERCHANT_CONTENT_BODY              = 'merchant_content_body';
+    case INVESTMENT_HEADER_TITLE            = 'investment_header_title';
+    case INVESTMENT_HEADER_CONTENT          = 'investment_header_content';
+    case INVESTMENT_BUTTON_TEXT             = 'investment_button_text';
+    case WHY_CHOSE_HEADER_TITLE             = 'why_choose_header_title';
+    case WHY_CHOSE_HEADER_CONTENT           = 'why_choose_header_content';
+    case WHY_CHOSE_CONTENT_HEADER           = 'why_choose_content_header';
+    case WHY_CHOSE_CONTENT_BODY             = 'why_choose_content_body';
+    case SATISFIED_CUSTOMER_HEADER_TITLE    = 'satisfied_customer_header_title';
+    case SATISFIED_CUSTOMER_HEADER_CUSTOMER = 'satisfied_customer_header_content';
+    case SATISFY_CUSTOMER_MESSAGE           = 'satisfy_customer_message';
+    case FAQ_HEADER_TITLE                   = 'faq_header_title';
+    case FAQ_HEADER_CONTENT                 = 'faq_header_content';
+    case FAQ_CONTENT_DATA                   = 'faq_content_data';
+    case BLOG_HEADER                        = 'Blog_header';
+    case BLOG_DETAILS                       = 'Blog_details';
+    case BLOG_TITLE                         = 'blog_title';
+    case BLOG_CONTENT                       = 'blog_content';
+    case BLOG_TOP_BANNER_TITLE              = 'blog_top_banner_title';
+    case BLOG_DETAILS_TOP_BANNER_TITLE      = 'blog_details_top_banner_title';
+    case CONTACT_US_TOP_BANNER              = 'contact_us_top_banner_title';
+    case CONTACT_ADDRESS_PLACE              = 'contact_address_place';
+    case CONTACT_ADDRESS_LOCATION           = 'contact_address_location';
+    case CONTACT_ADDRESS_CONTACT            = 'contact_address_contact';
+    case PAYMENT_WE_ACCEPT_HEADER_TITLE     = 'payment_we_accept_header_title';
+    case PAYMENT_WE_ACCEPT_HEADER_CONTENT   = 'payment_we_accept_header_content';
+    case STAKE_BANNER_TITLE                 = 'stake_banner_title';
+    case B2X_TITLE                          = 'b2x_title';
+    case B2X_BUTTON_ONE_TEXT                = 'b2x_button_one_text';
+    case B2X_BUTTON_TWO_TEXT                = 'b2x_button_two_text';
+    case B2X_CONTENT                        = 'b2x_content';
+    case B2X_LOAN_BANNER_TITLE              = 'b2x_loan_banner_title';
+    case B2X_CALCULATOR_HEADER_TITLE        = 'b2x_calculator_header_title';
+    case B2X_CALCULATOR_HEADER_CONTENT      = 'b2x_calculator_header_content';
+    case B2X_LOAN_DETAILS_HEADER_TITLE      = 'b2x_loan_details_header_title';
+    case B2X_LOAN_BUTTON_TEXT               = 'b2x_loan_button_text';
+    case B2X_LOAN_DETAILS_CONTENT           = 'b2x_loan_details_content';
+    case TOP_INVESTOR_BANNER_TITLE          = 'top_investor_banner_title';
+    case TOP_INVESTOR_TOP_BANNER_TITLE      = 'top_investor_top_banner_title';
+    case TOP_INVESTOR_HEADER_TITLE          = 'top_investor_header_title';
+    case TOP_INVESTOR_HEADER_CONTENT        = 'top_investor_header_content';
+    case OUR_SERVICE_HEADER_HEAD            = 'our_service_header_head';
+    case OUR_SERVICE_HEADER_CONTENT         = 'our_service_header_content';
+    case OUR_SERVICE_HEADER                 = 'our_service_header';
+    case OUR_SERVICE_CONTENT                = 'our_service_content';
+    case SERVICE_TOP_BANNER_TITLE           = 'service_top_banner_title';
+    case OUR_RATES_HEADER_TITLE             = 'our_rates_header_title';
+    case OUR_RATES_HEADER_CONTENT           = 'our_rates_header_content';
+    case OUR_RATE_CONTENT_TITLE             = 'our_rate_content_title';
+    case OUR_RATE_CONTENT_BODY              = 'our_rate_content_body';
+    case TEAM_MEMBER_BANNER_TITLE           = 'team_member_banner_title';
+    case TEAM_HEADER_TITLE                  = 'team_header_title';
+    case TEAM_HEADER_CONTENT                = 'team_header_content';
+    case OUR_DIFFERENCE_HEADER_TITLE        = 'our_difference_header_title';
+    case OUR_DIFFERENCE_HEADER_CONTENT      = 'our_difference_header_content';
+    case OUR_DIFFERENCE_CONTENT_HEADER      = 'our_difference_content_header';
+    case OUR_DIFFERENCE_CONTENT_BODY        = 'our_difference_content_body';
+    case QUICK_EXCHANGE_BANNER_TITLE        = 'quick_exchange_banner_title';
+    case QUICK_EXCHANGE_HEADER              = 'quick_exchange_header';
+    case QUICK_EXCHANGE_CONTENT             = 'quick_exchange_content';
+    case TRANSACTION_HEADER                 = 'transaction_header';
+}

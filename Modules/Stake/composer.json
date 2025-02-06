@@ -1,0 +1,31 @@
+{
+    "name": "nwidart/stake",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Stake\\": "",
+            "Modules\\Stake\\App\\": "app/",
+            "Modules\\Stake\\Database\\Factories\\": "database/factories/",
+            "Modules\\Stake\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Stake\\Tests\\": "tests/"
+        }
+    }
+}
