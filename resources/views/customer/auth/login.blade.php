@@ -1,12 +1,7 @@
-<x-customer-guest-layout id="login-bg" class="login-bg"
-    data-backgroundimage="{{ $_setting->login_bg_img ?? null ? storage_asset($_setting->login_bg_img) : assets('img/login-bg.png') }}">
+<x-customer-guest-layout id="login-bg" class="login-bg">
     <div class="form-container my-4">
         <div class="panel">
-            <div class="register-logo text-center mb-4">
-                <img class="mb-2"
-                    src="{{ $_setting->logo ?? null ? storage_asset($_setting->logo) : assets('img/logo.png') }}"
-                    alt="" />
-            </div>
+            
             <div class="panel-header mb-4">
                 <h3 class="fs-30 text-black">{{ localize('Sign In') }}</h3>
                 @if (session()->has('success'))
