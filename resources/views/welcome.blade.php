@@ -96,8 +96,8 @@
                         <li><span>26 </span> Countries
                             <br>Served</li>
                     </ul>
-                    <h5 class="lead h5-md mt30 mb20">Unordinary digital agency crafting sophisticated and<br> eccentric stuff that will leave you speechless</h5>
-                    <a href="#services" class="btn btn-hero">Join Now</a>
+                    <h5 class="lead h5-md mt30 mb20">A cutting-edge company revolutionizing the future of DeFi and crypto trading with innovative and secure solutions</h5>
+                    <a href="/customer/register" class="btn btn-hero">Join Now</a>
                 </div>
             </div>
         </div>
