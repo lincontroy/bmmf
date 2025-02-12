@@ -106,7 +106,7 @@ class WithdrawController extends Controller
                 'fees'=>0,
                 // 'withdrawal_account_id'=>1,
                 'amount'=>$request->withdraw_amount,
-                'status'=>2
+                // 'status'=>2
 
             ]);
 
