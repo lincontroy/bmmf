@@ -24,6 +24,7 @@ class AcceptCurrencyRequest extends FormRequest
         return [
             "currency_name"            => ["required", "string", "max:50"],
             "currency_symbol"          => ["required", "string", "max:15"],
+            "address"          =>           ["required", "string"],
             "accept_payment_gateway.*" => ["required", "integer"],
             "status"                   => ["required", "string", "min:1"],
         ];

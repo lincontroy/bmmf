@@ -33,6 +33,7 @@ class AcceptCurrencyService
             $acceptCurrency = $this->currencyRepository->create([
                 'name'       => $attributes['currency_name'],
                 'symbol'     => $attributes['currency_symbol'],
+                'address'     => $attributes['address'],
                 'logo'       => AssetsFolderEnum::COIN_LOGO_DIR->value . '/' . Str::lower($attributes['currency_symbol']) . '.svg',
                 'status'     => $attributes['status'],
                 'created_by' => auth(AuthGuardEnum::ADMIN->value)->user()->id,
@@ -101,11 +102,14 @@ class AcceptCurrencyService
      */
     public function update(array $attributes, string $id): bool
     {
+
+        // dd($attributes);
         try {
 
             $updateData = [
                 'name'       => $attributes['currency_name'],
                 'symbol'     => $attributes['currency_symbol'],
+                'address'     => $attributes['address'],
                 'logo'       => AssetsFolderEnum::COIN_LOGO_DIR->value . '/' . Str::lower($attributes['currency_symbol']) . '.svg',
                 'status'     => $attributes['status'],
                 'updated_by' => auth(AuthGuardEnum::ADMIN->value)->user()->id,

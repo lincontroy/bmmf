@@ -38,6 +38,20 @@
                 </div>
             </div>
             <div class="col-12">
+                                    <div class="mb-2">
+                                        <label class="col-form-label text-start text-color-1 fs-16 fw-medium">
+                                            {{ localize('Wallet address') }}<span class="text-danger">*</span></label>
+                                        <input
+                                            class="custom-form-control bg-address @error('address') is-invalid @enderror"
+                                            type="text" name="address" id="address" required />
+                                        <div class="invalid-feedback" role="alert">
+                                            @error('address')
+                                                {{ $message }}
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+            <div class="col-12">
                 <div class="mb-2">
                     <label class="col-form-label text-start text-color-1 fs-16 fw-medium">
                         {{ localize('Accept Payment Gateway') }}<span class="text-danger">*</span>

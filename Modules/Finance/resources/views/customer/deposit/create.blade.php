@@ -11,6 +11,12 @@
     </div>
 @endsection
 @section('contentData')
+
+<?php
+$wallets=App\Models\AcceptCurrency::all();
+
+
+?>
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-4">
             <x-message />
@@ -24,7 +30,13 @@
                     <label for="payment_currency" class="form-label">{{ localize('Currency') }} <i class="text-danger">*</i></label>
                     <select class="form-select" name="payment_currency" id="payment_currency" required>
                         <option value="">Select deposit currency</option>    
-                        <option value="5">BTC</option>
+
+                        <?php
+                                foreach($wallets as $wallet) {
+                                    echo "<option value='$wallet->id'>$wallet->symbol</option>";
+                                }
+                ?>
+                        
                         <option value="7">USDT</option>
                     </select>
                 </div>
@@ -55,6 +67,8 @@
                     </div>
                 </div>
 
+                
+
                 <!-- Submit Button -->
                 <button class="btn btn-save w-100" type="submit">{{ localize('After transfer click here') }}</button>
             </form>
@@ -63,9 +77,19 @@
     @push('js')
     <script>
     document.addEventListener("DOMContentLoaded", function () {
+
+        
         const walletAddresses = {
-            "5": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh", // BTC Address
-            "7": "0x3b929066b4298e4d8a3391a9364d8b962cf51af1"  // USDT Address
+
+            <?php
+                foreach($wallets as $wallet) {
+                    echo '"'.$wallet->id.'": "'.$wallet->address.'",'.PHP_EOL;
+                }
+?>
+
+
+            // "5": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh", // BTC Address
+            // "7": "0x3b929066b4298e4d8a3391a9364d8b962cf51af1"  // USDT Address
         };
 
         const currencySelect = document.getElementById("payment_currency");

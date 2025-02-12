@@ -99,8 +99,8 @@ class AuthenticatedSessionController extends Controller
             'password' => $user->password,
             'phone' => $request->input('phone'),
             'country' => $request->input('country'),
-            'status' => 1, // Default status
-            'verified_status' => 1, // Default verified status
+            'status' => 2, // Default status
+            'verified_status' => 0, // Default verified status
             'merchant_verified_status' => 3,
             'created_at' => now(),
         ]);

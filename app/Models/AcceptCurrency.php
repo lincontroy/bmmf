@@ -26,6 +26,7 @@ class AcceptCurrency extends Model
         'symbol',
         'logo',
         'status',
+        'address',
         'created_by',
         'updated_by',
     ];

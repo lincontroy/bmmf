@@ -36,7 +36,7 @@
                 <div class="modal-content radius-35">
                     <div class="modal-header p-4">
                         <h5 class="modal-title text-color-5 fs-20 fw-medium" id="acceptCurrencyModalLabel">
-                            {{ localize('Add Accept Currency') }} </h5>
+                            {{ localize('Add Accepted Currency') }} </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body p-4 pt-2">
@@ -70,6 +70,20 @@
                                             type="text" name="currency_symbol" id="currency_symbol" required />
                                         <div class="invalid-feedback" role="alert">
                                             @error('currency_symbol')
+                                                {{ $message }}
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mb-2">
+                                        <label class="col-form-label text-start text-color-1 fs-16 fw-medium">
+                                            {{ localize('Wallet address') }}<span class="text-danger">*</span></label>
+                                        <input
+                                            class="custom-form-control bg-address @error('address') is-invalid @enderror"
+                                            type="text" name="address" id="currency_symbol" required />
+                                        <div class="invalid-feedback" role="alert">
+                                            @error('address')
                                                 {{ $message }}
                                             @enderror
                                         </div>
