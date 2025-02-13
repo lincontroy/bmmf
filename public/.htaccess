@@ -1,20 +1,15 @@
 <IfModule mod_rewrite.c>
-    <IfModule mod_negotiation.c>
-        Options -MultiViews -Indexes
-    </IfModule>
-
     RewriteEngine On
 
-    # Handle Authorization Header
-    RewriteCond %{HTTP:Authorization} .
-    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    # Allow direct access to storage files
+    RewriteCond %{REQUEST_URI} ^/storage/ [NC]
+    RewriteRule .* - [L]
 
-    # Redirect Trailing Slashes If Not A Folder...
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_URI} (.+)/$
-    RewriteRule ^ %1 [L,R=301]
+    # Handle static files (CSS, JS, Images)
+    RewriteCond %{REQUEST_URI} \.(?:png|jpe?g|gif|css|js|ico|woff|woff2|ttf|eot|svg|pdf)$ [NC]
+    RewriteRule .* - [L]
 
-    # Send Requests To Front Controller...
+    # Route all other requests to Laravel
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
