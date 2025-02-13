@@ -9,14 +9,14 @@
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-    # Explicitly allow access to storage folder files
+    # Ensure direct access to the storage folder works
     RewriteCond %{REQUEST_URI} ^/storage/ [NC]
     RewriteRule .* - [L]
 
     # If the file exists as a directory or file, rewrite normally
     RewriteCond %{REQUEST_FILENAME} -d [OR]
     RewriteCond %{REQUEST_FILENAME} -f
-    RewriteRule ^ ^$1 [N]
+    RewriteRule ^ - [L]
 
     RewriteCond %{REQUEST_URI} (\.\w+$) [NC]
     RewriteRule ^(.*)$ public/$1
