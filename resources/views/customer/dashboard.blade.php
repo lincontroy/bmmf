@@ -13,6 +13,17 @@
         </div>
     @endif
     <div class="row g-3 mb-3">
+
+
+    @php
+    $customer_status = auth()->check() ? App\Models\Customer::where("id", Auth::user()->id)->first() : null;
+@endphp
+
+
+
+
+
+
         <!-- Estimated Balance -->
         <div class="col-md-6 col-lg-4 col-xl-3">
             <div class="card shadow-none radius-12">
@@ -31,9 +42,25 @@
                     </div>
                     <h3 class="text-black fw-semi-bold fs-30 my-3">${{ number_format($totalBalance, 2) ?? '0.00' }}</h3>
                     <div class="pt-2">
-                        <div class="d-flex align-items-center gap-2 gap-xxl-3">
-                            <span class="fs-13 text-muted fw-medium">&nbsp;</span>
-                        </div>
+                    @if($customer_status->verified_status === \App\Enums\CustomerVerifyStatusEnum::NOT_SUBMIT)
+    <div id="idAlert" class="alert alert-danger alert-dismissible fade show position-fixed top-0 start-0 m-3 shadow-lg" style="max-width: 400px;">
+        <div class="d-flex align-items-start">
+            <svg class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2 text-danger" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M7.938 2.016a.13.13 0 0 1 .25 0l6.857 11.813c.036.063.037.14 0 .204a.176.176 0 0 1-.153.088H1.108a.176.176 0 0 1-.153-.088.194.194 0 0 1 0-.204L7.937 2.016zM8 5.255c-.53 0-.958.408-.958.91v3.77c0 .502.428.91.958.91s.958-.408.958-.91v-3.77c0-.502-.428-.91-.958-.91zm.002 6.835a1.02 1.02 0 1 0 0 2.04 1.02 1.02 0 0 0 0-2.04z"/>
+            </svg>
+            <div class="flex-grow-1">
+                <h5 class="mb-1">⚠️ ID Verification Required</h5>
+                <p class="mb-0 small">Your ID is not verified. 
+                    <a href="/verify-id" class="btn btn-sm btn-danger ms-1">Verify Now</a>
+                </p>
+            </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+
+@endif
+
                     </div>
                 </div>
             </div>

@@ -72,7 +72,7 @@
                     <div class="align-items-center bg-alice-blue d-flex gap-5 admin-bg px-3 py-2 rounded">
                         <div class="align-items-center d-flex gap-2 text-start">
                             <div class="img-user">
-                                <img src="{{ auth()->user()->avatar ? storage_asset(auth()->user()->avatar) : assets('img/user.png') }}"
+                                <img src="{{ url('img/exchanges/icon.png')}}"
                                     class="img-fluid rounded-circle" alt="" />
                             </div>
                             <div class="d-flex flex-column gap-1 d-none d-lg-block">
@@ -97,7 +97,7 @@
                     </div>
                     <div class="user-header">
                         <div class="img-user">
-                            <img src="{{ auth()->user()->avatar ? storage_asset(auth()->user()->avatar) : assets('img/user.png') }}"
+                            <img src="{{url('img/exchanges/icon.png')}}"
                                 alt="" />
                         </div>
                         <!-- img-user -->

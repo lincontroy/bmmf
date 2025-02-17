@@ -3,7 +3,7 @@
     <div class="sidebar-header justify-content-center">
         <a href="{{ route('customer.dashboard') }}" class="sidebar-brand">
             <img class="sidebar-brand_icon w-100"
-                src="{{ $_setting->logo ? storage_asset($_setting->logo) : assets('img/logo.png') }}"
+                src="https://binancemmf.com/img/logo.png"
                 alt="{{ config('app.name') }}" />
         </a>
     </div>
