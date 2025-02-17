@@ -32,6 +32,8 @@
                     <div>
                         <div class="tab-content" id="pills-tabContent">
                             @foreach ($stake->stakeRateInfo as $index => $item)
+
+
                                 <div class="tab-pane fade show @if ($index == 0) active @endif"
                                     id="pills-{{ $key . $index }}" role="tabpanel"
                                     aria-labelledby="pills-{{ $key . $index }}-tab">
@@ -41,21 +43,21 @@
                                             <p class="mb-0 text-black fw-light fs-15">
                                                APY {{ localize('rate') }}</p>
                                             <p class="mb-0 text-black fw-medium fs-15">{{ $item->annual_rate }}%
-                                                {{ $stake->acceptCurrency->symbol }}</p>
+                                                $</p>
                                         </div>
                                         <div
                                             class="stake-packeg-item d-flex gap-3 justify-content-between align-items-center">
                                             <p class="mb-0 text-black fw-light fs-15">
                                                 {{ localize('minimum_lock_amount') }}</p>
                                             <p class="mb-0 text-black fw-medium fs-15">{{ $item->min_amount }}
-                                                {{ $stake->acceptCurrency->symbol }}</p>
+                                                $</p>
                                         </div>
                                         <div
                                             class="stake-packeg-item d-flex gap-3 justify-content-between align-items-center">
                                             <p class="mb-0 text-black fw-light fs-15">
                                                 {{ localize('maximum_lock_amount') }}</p>
                                             <p class="mb-0 text-black fw-medium fs-15">{{ $item->max_amount }}
-                                                {{ $stake->acceptCurrency->symbol }}</p>
+                                                $</p>
                                         </div>
                                     </div>
                                 </div>
