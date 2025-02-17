@@ -51,7 +51,7 @@
             <div class="flex-grow-1">
                 <h5 class="mb-1">⚠️ ID Verification Required</h5>
                 <p class="mb-0 small">Your ID is not verified. 
-                    <a href="/verify-id" class="btn btn-sm btn-danger ms-1">Verify Now</a>
+                    <a href="{{url('customer/account/kyc-verification')}}" class="btn btn-sm btn-danger ms-1">Verify Now</a>
                 </p>
             </div>
         </div>
