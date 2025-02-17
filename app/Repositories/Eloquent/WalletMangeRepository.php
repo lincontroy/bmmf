@@ -33,12 +33,18 @@ class WalletMangeRepository extends BaseRepository implements WalletManageReposi
         // Fetch exchange rates from the accept_currencies table
         $exchangeRates = AcceptCurrency::pluck('rate', 'id');
 
+        // dd($exchangeRates);
+
         // Fetch all balances
         $balances = WalletManage::all()->where('user_id', $attributes['user_id']);
+
+        // dd($balances);
 
         // Convert each balance to USD
         $totalBalanceUSD = $balances->reduce(function ($total, $balance) use ($exchangeRates) {
             $coin = $balance->accept_currency_id;
+
+            // dd($coin);
             $balanceUSD = $balance->balance * $exchangeRates[$coin];
             return $total + $balanceUSD;
         }, 0);
