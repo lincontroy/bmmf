@@ -44,12 +44,12 @@ class WalletMangeRepository extends BaseRepository implements WalletManageReposi
         $totalBalanceUSD = $balances->reduce(function ($total, $balance) use ($exchangeRates) {
             $coin = $balance->accept_currency_id;
 
-            dd($exchangeRates[$coin]);
+            // dd($exchangeRates[$coin]);
 
             // dd($coin);
-            $balanceUSD = $balance->balance * $exchangeRates[$coin];
+            $balanceUSD = $balance->balance * 1;
 
-            dd($balanceUSD);
+            // dd($balanceUSD);
             return $total + $balanceUSD;
         }, 0);
 
