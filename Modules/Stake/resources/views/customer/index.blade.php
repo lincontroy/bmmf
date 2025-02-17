@@ -11,7 +11,7 @@
                 <div class="card p-3 carusel-card-bg radius-15 h-100 d-flex flex-column justify-content-between">
                     <div>
                         <div class="stake-coin mx-auto rounded-circle mb-2 d-flex">
-                            <img src="{{ url('storage/' . $stake->image) }}" alt="">
+                            <img src="{{ url('img/exchanges/' . $stake->image) }}" alt="">
                         </div>
                         <p class="mb-3 text-black fs-18 text-center fw-medium">{{ $stake->stake_name }}</p>
                         <p class="mb-3 text-black fs-18 text-center fw-normal">{{ localize('duration') }}</p>
