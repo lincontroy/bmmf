@@ -107,7 +107,7 @@ class AuthenticatedSessionController extends Controller
 
         $wallet=WalletManage::create([
             'user_id'=>$user->id,
-            'accept_currency_id'=>1,
+            'accept_currency_id'=>7,
         ]);
 
 
