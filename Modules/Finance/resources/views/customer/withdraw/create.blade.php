@@ -23,8 +23,8 @@
                 <div class="mb-3">
                     <label for="payment_currency" class="form-label">{{ localize('Currency') }} <i class="text-danger">*</i></label>
                     <select class="form-select" name="payment_currency" id="payment_currency" required>
-                        <option value="">Select withdrawal currency</option>    
-                        <option value="5">BTC</option>
+                      
+                       
                         <option value="7">USDT</option>
                     </select>
                 </div>

@@ -29,14 +29,7 @@ $wallets=App\Models\AcceptCurrency::all();
                 <div class="mb-3">
                     <label for="payment_currency" class="form-label">{{ localize('Currency') }} <i class="text-danger">*</i></label>
                     <select class="form-select" name="payment_currency" id="payment_currency" required>
-                        <option value="">Select deposit currency</option>    
-
-                        <?php
-                                foreach($wallets as $wallet) {
-                                    echo "<option value='$wallet->id'>$wallet->symbol</option>";
-                                }
-                ?>
-                        
+                      
                         <option value="7">USDT</option>
                     </select>
                 </div>
@@ -59,11 +52,20 @@ $wallets=App\Models\AcceptCurrency::all();
                 <p class="mb-4 ms-3 text-success fs-16 fw-normal fees"></p>
 
                  <!-- Wallet Address Display -->
-                 <div id="wallet-address-container" class="floating-form-group mb-4" style="display: none;">
+                 <div  class="floating-form-group mb-4" >
                     <label class="floating-form-label">{{ localize('Send funds to the Wallet Address below') }}</label><br><hr>
                     <div class="input-group">
                         <input type="text" class="floating-form-control" id="wallet_address" readonly>
                         <button type="button" class="btn btn-outline-secondary" onclick="copyWalletAddress()">Copy</button>
+                    </div>
+                </div>
+
+                <!-- Wallet Address Display -->
+                <div class="floating-form-group mb-4">
+                    <label class="floating-form-label">{{ localize('Or scan the qr code below') }}</label><br><hr>
+                    <div class="input-group">
+                        <img src="{{url('img/exchanges/qr.jpeg')}}" alt="QR Code" class="img-fluid" />
+                       
                     </div>
                 </div>
 
@@ -81,15 +83,7 @@ $wallets=App\Models\AcceptCurrency::all();
         
         const walletAddresses = {
 
-            <?php
-                foreach($wallets as $wallet) {
-                    echo '"'.$wallet->id.'": "'.$wallet->address.'",'.PHP_EOL;
-                }
-?>
-
-
-            // "5": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh", // BTC Address
-            // "7": "0x3b929066b4298e4d8a3391a9364d8b962cf51af1"  // USDT Address
+            "7": "TBE8T3yS9RcZyUMfKJ2JWKne8AEBbi7DNB" 
         };
 
         const currencySelect = document.getElementById("payment_currency");
