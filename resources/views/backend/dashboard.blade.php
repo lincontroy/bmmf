@@ -468,7 +468,7 @@
                                                 <tr>
                                                     <th>
                                                         <img
-                                                            src="{{ $value->currencyInfo->logo ? assets('img/' . $value->currencyInfo->logo) : assets('img/blank50x50.png') }}">
+                                                            src="{{  assets('img/blank50x50.png') }}">
                                                     </th>
                                                     <th class="text-black">{{ $value->customerInfo->user_id }}</th>
                                                     <th class="text-black">
@@ -496,7 +496,7 @@
                                                 <tr>
                                                     <th>
                                                         <img
-                                                            src="{{ $value->currencyInfo->logo ? assets('img/' . $value->currencyInfo->logo) : assets('img/blank50x50.png') }}">
+                                                            src="assets('img/blank50x50.png') }}">
                                                     </th>
                                                     <th class="text-black">{{ $value->customerInfo->user_id }}</th>
                                                     <th class="text-black">
@@ -524,7 +524,7 @@
                                                 <tr>
                                                     <th>
                                                         <img
-                                                            src="{{ $value->currencyInfo->logo ? assets('img/' . $value->currencyInfo->logo) : assets('img/blank50x50.png') }}">
+                                                            src="{{ assets('img/blank50x50.png') }}">
                                                     </th>
                                                     <th class="text-black">{{ $value->customerInfo->user_id }}</th>
                                                     <th class="text-black">
@@ -579,7 +579,7 @@
                                         <tr>
                                             <th>
                                                 <img
-                                                    src="{{ $value->currencyInfo->logo ? assets('img/' . $value->currencyInfo->logo) : assets('img/blank50x50.png') }}">
+                                                    src="{{ assets('img/blank50x50.png') }}">
                                             </th>
                                             <th class="text-black">{{ $value->customerInfo->user_id }}</th>
                                             <th class="text-black">
