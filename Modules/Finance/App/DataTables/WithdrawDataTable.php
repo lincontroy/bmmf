@@ -29,7 +29,7 @@ class WithdrawDataTable extends DataTable
                 return $button;
             })
             ->addColumn('payment_gateway_id', function ($query) {
-                return $query->gatewayInfo['name'];
+                return "Binance";
             })
             ->addColumn('amount', function ($query) {
                 return $query->amount . ' ' . "USDT";
