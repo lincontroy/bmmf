@@ -47,9 +47,9 @@ class PendingWithdrawDataTable extends DataTable
             ->addColumn('credential', function ($query) {
                 $credentialsData = '<ul>';
 
-                foreach ($query->withdrawalAccount['credentials'] as $key => $value) {
-                    $credentialsData .= '<li>' . $value->name . ' : ' . $value->credential . '</li>';
-                }
+                // foreach ($query->withdrawalAccount['credentials'] as $key => $value) {
+                //     $credentialsData .= '<li>' . $value->name . ' : ' . $value->credential . '</li>';
+                // }
 
                 $credentialsData .= '</ul>';
 
