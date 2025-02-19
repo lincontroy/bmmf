@@ -39,10 +39,10 @@ class PendingWithdrawDataTable extends DataTable
                 return $query->gatewayInfo['name'];
             })
             ->addColumn('amount', function ($query) {
-                return $query->amount . ' ' . $query->currencyInfo['symbol'];
+                return $query->amount . ' ' . "USDT";
             })
             ->addColumn('fees', function ($query) {
-                return $query->fees . ' ' . $query->currencyInfo['symbol'];
+                return $query->fees . ' ' . "USDT";
             })
             ->addColumn('credential', function ($query) {
                 $credentialsData = '<ul>';

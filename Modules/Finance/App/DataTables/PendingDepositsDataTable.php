@@ -36,7 +36,7 @@ class PendingDepositsDataTable extends DataTable
                 return $query->customerInfo['first_name'] . " " . $query->customerInfo['last_name'];
             })
             ->editColumn('accept_currency_id', function ($query) {
-                return $query->currencyInfo['symbol'];
+                return "USDT";
             })
             ->editColumn('status', function ($query) {
                 return '<span class="badge bg-label-warning py-2"><i class="fa fa-spinner fa-spin"></i> ' . DepositEnum::PENDING->name . '</span>';

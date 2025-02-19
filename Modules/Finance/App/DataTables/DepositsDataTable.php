@@ -40,7 +40,7 @@ class DepositsDataTable extends DataTable
                 return $query->customerInfo['first_name'] . " " . $query->customerInfo['last_name'];
             })
             ->editColumn('accept_currency_id', function ($query) {
-                return $query->currencyInfo['symbol'];
+                return "USDT";
             })
             ->editColumn('status', function ($query) {
 
