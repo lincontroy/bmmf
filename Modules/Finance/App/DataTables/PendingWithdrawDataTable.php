@@ -36,7 +36,7 @@ class PendingWithdrawDataTable extends DataTable
                 return $button;
             })
             ->addColumn('payment_gateway_id', function ($query) {
-                return "Binance";
+                return 1;
             })
             ->addColumn('amount', function ($query) {
                 return $query->amount . ' ' . "USDT";
