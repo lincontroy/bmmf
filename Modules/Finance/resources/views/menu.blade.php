@@ -29,6 +29,10 @@
                 <li>
                     <a href="{{ route('deposit.index') }}">{{ localize('Deposit_List') }}</a>
                 </li>
+
+                <li>
+                    <a href="{{ route('balance.update') }}">{{ localize('Update Balance') }}</a>
+                </li>
             @endif
             @if ($_auth_user->can(PermissionMenuEnum::FINANCE_PENDING_DEPOSIT->value . '.' . PermissionActionEnum::READ->value))
                 <li>

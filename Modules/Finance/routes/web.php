@@ -26,6 +26,8 @@ Route::group(['middleware' => ['auth:' . AuthGuardEnum::ADMIN->value, 'verified'
     Route::resource('finance/deposit', DepositController::class);
     Route::resource('finance/pending-deposit', PendingDepositController::class);
     Route::get('finance/credit', [DepositController::class, 'addCredit'])->name('credit');
+    Route::get('finance/balances', [DepositController::class, 'balances'])->name('balance.update');
+    Route::post('finance/update', [DepositController::class, 'updateBalance'])->name('update.balance');
     Route::POST('finance/get-user', [DepositController::class, 'getUser'])->name('admin.finance.getUser');
     Route::POST('finance/credit/generatePdf', [DepositController::class, 'generatePdf'])->name(
         'admin.finance.generatePdf'

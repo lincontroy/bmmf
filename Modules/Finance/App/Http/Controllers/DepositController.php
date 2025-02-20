@@ -66,6 +66,29 @@ class DepositController extends Controller
         return $depositsDataTable->render('finance::index');
     }
 
+    public function balances()
+    {
+        cs_set('theme', [
+            'title'       => localize('Balances'),
+            'description' => localize('Balances'),
+        ]);
+
+        return view('finance::balance');
+    }
+
+    public function updateBalance(Request $request) {
+        $request->validate([
+            'id' => 'required|exists:wallet_manages,id',
+            'balance' => 'required|numeric|min:0'
+        ]);
+    
+        $wallet = WalletManage::find($request->id);
+        $wallet->balance = $request->balance;
+        $wallet->save();
+    
+        return response()->json(['success' => true, 'message' => 'Balance updated successfully!']);
+    }
+
     /**
      * Display a listing of the resource.
      */

@@ -50,6 +50,7 @@ class StakeSubscriptionDataTable extends DataTable
             ->addColumn('interest_amount', function ($customerStake) {
                 return $customerStake->interestInfo->interest_amount . ' ' . "USDT";
             })
+        
             ->addColumn('duration', function ($customerStake) {
                 return $customerStake->duration . ' Days';
             })
