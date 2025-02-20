@@ -32,7 +32,7 @@
                                         @endphp
                                         {{ $user }}
                                     </td>
-                                    <td>{{ $balance->balance }}</td>
+                                    <td>USDT {{ $balance->balance }}</td>
                                     <td>
                                     <button class="btn btn-primary btn-sm edit-balance-btn" 
                                         data-id="{{ $balance->id }}" 
