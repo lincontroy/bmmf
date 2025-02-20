@@ -10,6 +10,8 @@ use Yajra\DataTables\Html\Builder as HtmlBuilder;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Services\DataTable;
+use Illuminate\Support\Facades\Log;
+
 
 class StakeSubscriptionDataTable extends DataTable
 {
@@ -21,8 +23,12 @@ class StakeSubscriptionDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
 
+        
         return (new EloquentDataTable($query))
             ->addColumn('user', function ($customerStake) {
+
+                Log::info($customerStake);
+        Log::info($customerStake->customerInfo->first_name . ' ' . $customerStake->customerInfo->last_name);
                 $imageLink =  assets('img/blank50x50.png');
                 return '<div class="d-flex align-items-center gap-3">
                 <div class="user-img rounded-circle">
