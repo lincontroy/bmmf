@@ -35,13 +35,13 @@ class StakeSubscriptionDataTable extends DataTable
                     <img src="' . $imageLink . '" alt="">
                 </div>
                 <div>
-                    // <p class="mb-1 fs-15 fw-medium">' . $customerStake->customerInfo->first_name . ' ' . $customerStake->customerInfo->last_name . '</p>
+                    <p class="mb-1 fs-15 fw-medium">' . $customerStake->customerInfo->first_name . ' ' . $customerStake->customerInfo->last_name . '</p>
                     <p class="mb-0 fs-12 fw-normal">' . $customerStake->customerInfo->email . '</p>
                 </div>
             </div>';
             })
             ->addColumn('coin', function ($customerStake) {
-                $imageLink = $customerStake->acceptCurrency->logo ? assets('img/' . $customerStake->acceptCurrency->logo) : assets('img/blank50x50.png');
+                $imageLink =  assets('img/blank50x50.png');
                 return '<div class="fee-coin rounded-circle"><img src="' . $imageLink . '" alt=""></div>';
             })
             ->addColumn('locked_amount', function ($customerStake) {
