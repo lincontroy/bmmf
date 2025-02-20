@@ -41,7 +41,7 @@ class StakeSubscriptionDataTable extends DataTable
             </div>';
             })
             ->addColumn('coin', function ($customerStake) {
-                $imageLink =  assets('img/blank50x50.png');
+                $imageLink =  assets('img/usdt22.png');
                 return '<div class="fee-coin rounded-circle"><img src="' . $imageLink . '" alt=""></div>';
             })
             ->addColumn('locked_amount', function ($customerStake) {
