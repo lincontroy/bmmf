@@ -27,15 +27,15 @@ class StakeSubscriptionDataTable extends DataTable
         return (new EloquentDataTable($query))
             ->addColumn('user', function ($customerStake) {
 
-                Log::info($customerStake);
-        Log::info($customerStake->customerInfo->first_name . ' ' . $customerStake->customerInfo->last_name);
+                // Log::info($customerStake);
+        // Log::info($customerStake->customerInfo->first_name . ' ' . $customerStake->customerInfo->last_name);
                 $imageLink =  assets('img/blank50x50.png');
                 return '<div class="d-flex align-items-center gap-3">
                 <div class="user-img rounded-circle">
                     <img src="' . $imageLink . '" alt="">
                 </div>
                 <div>
-                    <p class="mb-1 fs-15 fw-medium">' . $customerStake->customerInfo->first_name . ' ' . $customerStake->customerInfo->last_name . '</p>
+                    // <p class="mb-1 fs-15 fw-medium">' . $customerStake->customerInfo->first_name . ' ' . $customerStake->customerInfo->last_name . '</p>
                     <p class="mb-0 fs-12 fw-normal">' . $customerStake->customerInfo->email . '</p>
                 </div>
             </div>';
