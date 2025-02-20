@@ -23,7 +23,7 @@ class StakeSubscriptionDataTable extends DataTable
 
         return (new EloquentDataTable($query))
             ->addColumn('user', function ($customerStake) {
-                $imageLink = $customerStake->customerInfo->avatar ? storage_asset($customerStake->customerInfo->avatar) : assets('img/blank50x50.png');
+                $imageLink =  assets('img/blank50x50.png');
                 return '<div class="d-flex align-items-center gap-3">
                 <div class="user-img rounded-circle">
                     <img src="' . $imageLink . '" alt="">
