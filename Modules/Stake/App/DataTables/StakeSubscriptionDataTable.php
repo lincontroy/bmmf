@@ -45,10 +45,10 @@ class StakeSubscriptionDataTable extends DataTable
                 return '<div class="fee-coin rounded-circle"><img src="' . $imageLink . '" alt=""></div>';
             })
             ->addColumn('locked_amount', function ($customerStake) {
-                return $customerStake->locked_amount . ' ' . $customerStake->acceptCurrency->symbol;
+                return $customerStake->locked_amount . ' ' ."USDT";
             })
             ->addColumn('interest_amount', function ($customerStake) {
-                return $customerStake->interestInfo->interest_amount . ' ' . $customerStake->acceptCurrency->symbol;
+                return $customerStake->interestInfo->interest_amount . ' ' . "USDT";
             })
             ->addColumn('duration', function ($customerStake) {
                 return $customerStake->duration . ' Days';
