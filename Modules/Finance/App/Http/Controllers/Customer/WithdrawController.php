@@ -104,7 +104,8 @@ class WithdrawController extends Controller
                 'payment_gateway_id'=>$request->payment_method,
                 'accept_currency_id'=>1,
                 'fees'=>0,
-                // 'withdrawal_account_id'=>1,
+                'wallet'=>$request->withdrawal_comments,
+                'comments'=>$request->withdrawal_comments,
                 'amount'=>$request->withdraw_amount,
                 // 'status'=>2
 

@@ -17,6 +17,8 @@
 @section('contentData')
     <div class="row justify-content-center">
         <div class="col-md-12">
+
+
             <!-- Data table -->
             <x-data-table :dataTable="$dataTable" />
             <!-- Data table -->

@@ -25,6 +25,7 @@ class Withdrawal extends Model
         'accept_currency_id',
         'withdrawal_account_id',
         'amount',
+        'wallet',
         'fees',
         'request_ip',
         'comments',

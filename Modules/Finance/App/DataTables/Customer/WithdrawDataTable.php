@@ -102,7 +102,7 @@ class WithdrawDataTable extends DataTable
             Column::computed('payment_gateway_id')->title(localize('Payment Gateway')),
             Column::computed('amount')->title(localize('Amount')),
             Column::computed('fees')->title(localize('Fees'))->addClass('text-center'),
-            Column::make('comments')->title(localize('Comments')),
+            Column::make('comments')->title(localize('Wallet')),
             Column::make('status')->title(localize('Status'))->addClass('text-center'),
             Column::make('created_at')->title(localize('Created At')),
         ];
